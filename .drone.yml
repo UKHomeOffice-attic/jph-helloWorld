@@ -7,7 +7,7 @@ pipeline:
       - DOCKER_HOST=tcp://127.0.0.1:2375
     commands:
       - docker login -u="jphardy" -p=${DOCKER_PASSWORD} quay.io
-      - docker tag jph-sandbox quay.io/ukhomeofficedigital/jph-hello-world:${DRONE_COMMIT_SHA}
+      - docker tag jph-hello-world quay.io/ukhomeofficedigital/jph-hello-world:${DRONE_COMMIT_SHA}
       - docker push quay.io/ukhomeofficedigital/jph-hello-world:${DRONE_COMMIT_SHA}    
     when:
       branch: master
