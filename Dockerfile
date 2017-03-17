@@ -2,5 +2,5 @@ FROM node:6-alpine
 WORKDIR /src
 COPY . .
 RUN npm install --quiet && npm test
-EXPOSE 4000
+EXPOSE 8888
 CMD npm start
