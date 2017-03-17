@@ -13,7 +13,7 @@ pipeline:
       branch: master
       event: push
 
-image_to_quay:
+  image_to_quay:
     image: docker:1.11
     environment:
       - DOCKER_HOST=tcp://127.0.0.1:2375
