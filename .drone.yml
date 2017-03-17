@@ -6,9 +6,7 @@ pipeline:
     environment:
       - DOCKER_HOST=tcp://127.0.0.1:2375
     commands:
-      - docker login -u="jphardy" -p=${DOCKER_PASSWORD} quay.io
-      - docker tag jph-hello-world quay.io/ukhomeofficedigital/jph-hello-world:${DRONE_COMMIT_SHA}
-      - docker push quay.io/ukhomeofficedigital/jph-hello-world:${DRONE_COMMIT_SHA}    
+      - docker build -t jph-hello-world .    
     when:
       branch: master
       event: push
@@ -18,9 +16,9 @@ pipeline:
     environment:
       - DOCKER_HOST=tcp://127.0.0.1:2375
     commands:
-      - docker login -u="<quay_user>" -p=${DOCKER_PASSWORD} quay.io
-      - docker tag <image_name> quay.io/ukhomeofficedigital/<image_name>:${DRONE_COMMIT_SHA}
-      - docker push quay.io/ukhomeofficedigital/<image_name>:${DRONE_COMMIT_SHA}
+      - docker login -u="jphardy" -p=${DOCKER_PASSWORD} quay.io
+      - docker tag jph-hello-world quay.io/ukhomeofficedigital/jph-hello-world:${DRONE_COMMIT_SHA}
+      - docker push quay.io/ukhomeofficedigital/jph-hello-world:${DRONE_COMMIT_SHA}
     when:
       branch: master
       event: push
