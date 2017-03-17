@@ -6,7 +6,9 @@ pipeline:
     environment:
       - DOCKER_HOST=tcp://127.0.0.1:2375
     commands:
-      - docker build -t jph-sandbox .
+      - docker login -u="jphardy" -p=${DOCKER_PASSWORD} quay.io
+      - docker tag jph-sandbox quay.io/ukhomeofficedigital/jph-sandbox:${DRONE_COMMIT_SHA}
+      - docker push quay.io/ukhomeofficedigital/jph-sandbox:${DRONE_COMMIT_SHA}    
     when:
       branch: master
       event: push
