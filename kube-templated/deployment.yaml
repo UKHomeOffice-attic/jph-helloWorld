@@ -11,8 +11,8 @@ spec:
         name: {{.APP_NAME}}
     spec:
       containers:
-      - name: hello-world-nodejs
-        image: quay.io/ukhomeofficedigital/dsp-hello-world:{{.APP_VERSION}}
+      - name: jph-hello-world
+        image: quay.io/ukhomeofficedigital/jph-hello-world:{{.APP_VERSION}}
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 4000
