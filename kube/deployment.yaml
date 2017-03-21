@@ -2,17 +2,17 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: dsp-hello-world
+  name: jph-hello-world
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        name: dsp-hello-world
+        name: jph-hello-world
     spec:
       containers:
-      - name: hello-world-nodejs
-        image: dsp-hello-world:v1
+      - name: jph-hello-world
+        image: jph-hello-world:v1
         imagePullPolicy: IfNotPresent
         ports:
           - containerPort: 4000
